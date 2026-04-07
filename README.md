@@ -10,6 +10,14 @@ Built with **PyTorch** and **Gymnasium**. Developed and trained on **Databricks*
   <em>Trained DQN agent performing smooth controlled landings</em>
 </p>
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=i8ZBA4Vqa14">
+    <img src="https://img.youtube.com/vi/i8ZBA4Vqa14/maxresdefault.jpg" width="500" alt="Watch on YouTube"/>
+  </a>
+  <br/>
+  <em>Watch: Lunar Lander Reinforcement Learning explained (YouTube)</em>
+</p>
+
 ---
 
 ## Training Progression
@@ -28,7 +36,25 @@ Watch the agent evolve from random crashing to controlled landings:
 
 The [LunarLander-v3](https://gymnasium.farama.org/environments/box2d/lunar_lander/) environment simulates landing a spacecraft between two flags on the moon's surface.
 
-**State Space** - 8 continuous values per timestep:
+<p align="center">
+  <img src="assets/environment-overview.png" width="500" alt="LunarLander Environment Overview"/>
+  <br/>
+  <em>The spacecraft must navigate to the landing pad between the two flags</em>
+</p>
+
+### The RL Loop
+
+The agent interacts with the environment in a classic reinforcement learning cycle:
+
+<p align="center">
+  <img src="assets/rl-agent-loop.png" width="600" alt="RL Agent Loop"/>
+</p>
+
+At each timestep the agent **observes** the current state, **selects an action** (which thruster to fire), receives a **reward** signal, and transitions to the next state. Over thousands of episodes, the agent learns which actions lead to successful landings.
+
+### State Space
+
+The agent receives **8 continuous values** per timestep:
 
 | Index | Feature | Description |
 |-------|---------|-------------|
@@ -37,7 +63,15 @@ The [LunarLander-v3](https://gymnasium.farama.org/environments/box2d/lunar_lande
 | 4-5 | Orientation | Angle and angular velocity |
 | 6-7 | Leg contact | Left/right leg touching ground (boolean) |
 
-**Action Space** - 4 discrete actions: do nothing, fire left engine, fire main engine, fire right engine.
+<p align="center">
+  <img src="assets/state-space-visualization.png" width="650" alt="State Space Visualization"/>
+  <br/>
+  <em>Visualizing how different state variable combinations affect the lander's behavior</em>
+</p>
+
+### Action Space & Rewards
+
+**4 discrete actions**: do nothing, fire left engine, fire main engine, fire right engine.
 
 **Reward**: +100-140 for landing on pad, +10 per leg contact, -0.3 per main engine frame, -100 for crashing. **Solved** when average reward >= 200 over 100 consecutive episodes.
 

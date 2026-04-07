@@ -28,3 +28,8 @@ env/
 
 # Databricks
 .databricks/
+
+# Original unsorted images (copies live in assets/)
+1lunarlander.png
+1_GQXOuxzBdf_29c5ctrFhTw.png
+66a2af4394023ec836cb78f3_*.png
