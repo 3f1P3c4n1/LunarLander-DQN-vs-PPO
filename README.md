@@ -11,11 +11,9 @@ Built with **PyTorch** and **Gymnasium**. Developed and trained on **Databricks*
 </p>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=i8ZBA4Vqa14">
-    <img src="https://img.youtube.com/vi/i8ZBA4Vqa14/maxresdefault.jpg" width="500" alt="Watch on YouTube"/>
-  </a>
+  <video src="https://github.com/3f1P3c4n1/LunarLander-DQN-vs-PPO/raw/main/assets/lunar-lander-rl-explained.mp4" width="500" controls></video>
   <br/>
-  <em>Watch: Lunar Lander Reinforcement Learning explained (YouTube)</em>
+  <em>Lunar Lander Reinforcement Learning explained (<a href="https://www.youtube.com/watch?v=i8ZBA4Vqa14">YouTube source</a>)</em>
 </p>
 
 ---
